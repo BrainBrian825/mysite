@@ -1,74 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brian Feuerman</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navigation -->
-  <nav>
-    <ul>
+  <nav class="navbar">
+    <a href="#" class="nav-logo">BF</a>
+
+    <ul class="nav-links">
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#resume">Resume</a></li>
-      <li><a href="#donate" class="donate-button">Donate</a></li>
+      <li><a href="#donate" class="nav-button">Donate</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
-  <header>
-    <h1>Brian Feuerman</h1>
-    <p>Engineering Student & Photographer</p>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Aerospace Engineering • Photography • Night Sky</p>
+      <h1>Brian Feuerman</h1>
+      <p class="hero-subtitle">
+        Engineering student, photographer, and maker of neat things.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#portfolio" class="button primary">View Portfolio</a>
+        <a href="/Brian_s_Resume.pdf" target="_blank" class="button secondary">View Resume</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="gallery">
-      <img src="images/recombined.jpg" alt="Photo 1">
-      <img src="images/sunspot.PNG" alt="Photo 2">
-      <img src="images/Trail 2.JPEG" alt="Photo 3">
-      <img src="images/city.jpg" alt="Photo 4">
-    </div>
-  </section>
+  <main>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="section-header">
+        <p class="section-kicker">Selected Work</p>
+        <h2>Portfolio</h2>
+        <p>
+          A mix of photography, astrophotography, and visual experiments.
+        </p>
+      </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="images/camphoto_342241519.JPG" alt="Brian Feuerman">
-      <p>Hi, I'm Brian Feuerman. I'm an Aerospace Engineering student, passionate photographer, and all-around fun guy! In my spare time, you can find me editing photos, working on neat engineering projects, or admiring the night sky.</p>
-    </div>
-  </section>
+      <div class="gallery">
+        <figure class="gallery-card large">
+          <img src="images/recombined.jpg" alt="Photography work by Brian Feuerman">
+        </figure>
 
-  <!-- Resume Section -->
-  <section id="resume">
-    <h2>Resume</h2>
-    <a href="/Brian_s_Resume.pdf" target="_blank">View Resume</a>
-  </section>
+        <figure class="gallery-card">
+          <img src="images/sunspot.PNG" alt="Solar sunspot photograph">
+        </figure>
 
-  <!-- Donate Section -->
-  <section id="donate">
-    <h2>Support My Work</h2>
-    <p>If you enjoy my work, consider supporting me!</p>
-    <a href="https://www.paypal.com/donate/?business=6NGY5P9HKCDYA&no_recurring=0&currency_code=USD" class="donate-button">Donate via PayPal</a>
-  </section>
+        <figure class="gallery-card">
+          <img src="images/Trail 2.JPEG" alt="Long exposure star trail photograph">
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="images/city.jpg" alt="City photography">
+        </figure>
+
+        <figure class="gallery-card wide">
+          <img src="images/orion.jpg" alt="Astrophotography image of Orion">
+        </figure>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="about-card">
+        <div class="about-image-wrap">
+          <img src="images/1767205129662.jpg" alt="Brian Feuerman" class="about-image">
+        </div>
+
+        <div class="about-text">
+          <p class="section-kicker">About Me</p>
+          <h2>Hi, I’m Brian.</h2>
+          <p>
+            I'm an Aerospace Engineering student, passionate photographer, and
+            all-around fun guy. In my spare time, you can find me editing photos,
+            working on neat engineering projects, or admiring the night sky.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section resume-section">
+      <div class="simple-card">
+        <p class="section-kicker">Resume</p>
+        <h2>Want the details?</h2>
+        <p>
+          Take a look at my resume for projects, experience, and technical skills.
+        </p>
+        <a href="/Brian_s_Resume.pdf" target="_blank" class="button primary">
+          View Resume
+        </a>
+      </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="section donate-section">
+      <div class="simple-card donate-card">
+        <p class="section-kicker">Support</p>
+        <h2>Support My Work</h2>
+        <p>
+          If you enjoy my photography or projects, consider supporting me.
+        </p>
+        <a
+          href="https://www.paypal.com/donate/?business=6NGY5P9HKCDYA&no_recurring=0&currency_code=USD"
+          class="button primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Donate via PayPal
+        </a>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Brian Feuerman</p>
+    <p>&copy; 2026 Brian Feuerman</p>
+
     <div class="social-links">
-      <a href="mailto:brianfeuerman@gmail.com" aria-label="Email">
-        <img src="images/email.png" alt="Email">
+      <a href="mailto:brian@brianfeuerman.com" aria-label="Email">
+        <img src="images/email.png" alt="">
       </a>
-      <a href="https://instagram.com/brianscoolstuff" target="_blank" aria-label="Instagram">
-        <img src="images/instagram.png" alt="Instagram">
+
+      <a href="https://instagram.com/brianscoolstuff" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="images/instagram.png" alt="">
       </a>
-      <a href="https://www.linkedin.com/in/brian-feuerman-627a55279/" target="_blank" aria-label="LinkedIn">
-        <img src="images/linkedin.png" alt="LinkedIn">
+
+      <a href="https://www.linkedin.com/in/brian-feuerman-627a55279/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="images/linkedin.png" alt="">
       </a>
     </div>
   </footer>
