@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
   <title>Brian Feuerman</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .gallery-card { display:block!important; position:relative!important; overflow:hidden!important; line-height:0!important; padding:0!important; }
+    .gallery-card > img { position:absolute!important; inset:0!important; display:block!important; width:100%!important; height:100%!important; min-width:100%!important; min-height:100%!important; max-width:none!important; object-fit:cover!important; object-position:center center!important; }
+  </style>
 </head>
 
 <body>
@@ -52,23 +57,23 @@
 
       <div class="gallery">
         <figure class="gallery-card large">
-          <img src="images/recombined.jpg" alt="Photography work by Brian Feuerman">
+          <img src="images/recombined-optimized.webp" width="1800" height="1201" alt="Photography work by Brian Feuerman" loading="lazy" decoding="async">
         </figure>
 
-        <figure class="gallery-card">
-          <img src="images/sunspot.PNG" alt="Solar sunspot photograph">
+        <figure class="gallery-card sunspot-card">
+          <img src="images/sunspot-optimized.webp" width="1100" height="665" alt="Solar sunspot photograph" loading="lazy" decoding="async">
         </figure>
 
-        <figure class="gallery-card">
-          <img src="images/Trail 2.JPEG" alt="Long exposure star trail photograph">
+        <figure class="gallery-card trail-card">
+          <img src="images/trail-optimized.webp" width="1400" height="934" alt="Long exposure star trail photograph" loading="lazy" decoding="async">
         </figure>
 
-        <figure class="gallery-card">
-          <img src="images/city.jpg" alt="City photography">
+        <figure class="gallery-card city-card">
+          <img src="images/city-optimized.webp" width="1400" height="934" alt="City photography" loading="lazy" decoding="async">
         </figure>
 
-        <figure class="gallery-card wide">
-          <img src="images/orion.jpg" alt="Astrophotography image of Orion">
+        <figure class="gallery-card wide orion-card">
+          <img src="images/orion-optimized.webp" width="1600" height="1146" alt="Astrophotography image of Orion" loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
@@ -77,7 +82,7 @@
     <section id="about" class="section about-section">
       <div class="about-card">
         <div class="about-image-wrap">
-          <img src="images/1767205129662.jpg" alt="Brian Feuerman" class="about-image">
+          <img src="images/profile-optimized.webp" width="800" height="800" alt="Brian Feuerman" class="about-image" loading="lazy" decoding="async">
         </div>
 
         <div class="about-text">

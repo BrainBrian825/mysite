@@ -39,6 +39,21 @@ img {
   display: block;
 }
 
+/* Keep Chrome from doing expensive image/layout work while scrolling. */
+img[width][height] {
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -59,6 +74,7 @@ a {
   gap: 1rem;
 
   background: rgba(15, 23, 42, 0.72);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -216,41 +232,73 @@ a {
 /* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows:
+    clamp(210px, 22vw, 260px)
+    clamp(210px, 22vw, 260px)
+    clamp(300px, 32vw, 420px);
+  grid-template-areas:
+    "feature feature feature feature feature feature feature feature sun sun sun sun"
+    "feature feature feature feature feature feature feature feature trail trail trail trail"
+    "city city city city orion orion orion orion orion orion orion orion";
+  gap: 1.1rem;
+  align-items: stretch;
 }
 
 .gallery-card {
   margin: 0;
-  grid-column: span 4;
-  min-height: 260px;
+  min-height: 0;
+  line-height: 0;
   overflow: hidden;
+  position: relative;
   border-radius: var(--radius);
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+    var(--card-solid);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.34);
+  isolation: isolate;
+  contain: layout paint;
 }
 
-.gallery-card.large {
-  grid-column: span 8;
-  grid-row: span 2;
+.gallery-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
-.gallery-card.wide {
-  grid-column: span 8;
-}
+.gallery-card.large { grid-area: feature; }
+.gallery-card.sunspot-card { grid-area: sun; }
+.gallery-card.trail-card { grid-area: trail; }
+.gallery-card.city-card { grid-area: city; }
+.gallery-card.wide { grid-area: orion; }
 
 .gallery-card img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  min-height: inherit;
+  max-width: none;
   object-fit: cover;
-  transition: transform 0.45s ease, filter 0.45s ease;
+  transform: scale(1.001);
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .gallery-card:hover img {
-  transform: scale(1.055);
-  filter: saturate(1.1) contrast(1.05);
+  transform: scale(1.035);
+  filter: saturate(1.06) contrast(1.03);
+}
+
+.gallery-card.large img,
+.gallery-card.sunspot-card img,
+.gallery-card.trail-card img,
+.gallery-card.city-card img,
+.gallery-card.orion-card img {
+  object-position: center center;
 }
 
 /* About */
@@ -359,10 +407,18 @@ footer p {
 
 /* Tablet */
 @media (max-width: 900px) {
-  .gallery-card,
-  .gallery-card.large,
-  .gallery-card.wide {
-    grid-column: span 6;
+  .gallery {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows:
+      clamp(320px, 58vw, 520px)
+      clamp(220px, 38vw, 320px)
+      clamp(220px, 38vw, 320px)
+      clamp(280px, 48vw, 420px);
+    grid-template-areas:
+      "feature feature feature feature feature feature"
+      "sun sun sun trail trail trail"
+      "city city city city city city"
+      "orion orion orion orion orion orion";
   }
 
   .about-card {
@@ -413,13 +469,26 @@ footer p {
 
   .gallery {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      "feature"
+      "sun"
+      "trail"
+      "city"
+      "orion";
+    gap: 0.9rem;
   }
 
   .gallery-card,
   .gallery-card.large,
   .gallery-card.wide {
-    grid-column: auto;
-    min-height: 300px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-card.large,
+  .gallery-card.wide {
+    aspect-ratio: 3 / 2;
   }
 
   .about-text {
@@ -447,6 +516,19 @@ footer p {
   .gallery-card,
   .gallery-card.large,
   .gallery-card.wide {
-    min-height: 240px;
+    min-height: 0;
   }
+}
+
+/* Final gallery crop guard. Placed at the very end so it wins normal cascade order. */
+.gallery .gallery-card > img[width][height],
+.gallery .gallery-card > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
 }
