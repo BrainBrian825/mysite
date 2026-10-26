@@ -1,167 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1020" />
-  <title>Brian Feuerman</title>
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e7">
+  <meta name="description" content="Personal website of Brian Feuerman, an Aerospace Engineering student and photographer. Photographs, résumé, and contact information.">
+  <meta property="og:title" content="Brian Feuerman — Engineering & Photography">
+  <meta property="og:description" content="Photographs and a little about Brian Feuerman, an Aerospace Engineering student.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brianfeuerman.com/images/recombined-optimized.jpg">
+  <title>Brian Feuerman — Engineering & Photography</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <script src="script.js?v=3" defer></script>
 </head>
-
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="#" class="nav-logo">BF</a>
-
-    <ul class="nav-links">
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#donate" class="nav-button">Donate</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Aerospace Engineering • Photography • Night Sky</p>
-      <h1>Brian Feuerman</h1>
-      <p class="hero-subtitle">
-        Engineering student, photographer, and maker of neat things.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#portfolio" class="button primary">View Portfolio</a>
-        <a href="/Brian_s_Resume.pdf" target="_blank" class="button secondary">View Resume</a>
-      </div>
-    </div>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="identity" href="#top" aria-label="Brian Feuerman, home">
+      <svg class="identity-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="1.3"/>
+        <ellipse cx="24" cy="24" rx="23" ry="8" transform="rotate(-38 24 24)" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="37" cy="12" r="3.2" fill="currentColor"/>
+      </svg>
+      <span>Brian<br>Feuerman.</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#portfolio">Photographs</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
   </header>
-
-  <main>
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-      <div class="section-header">
-        <p class="section-kicker">Selected Work</p>
-        <h2>Portfolio</h2>
-        <p>
-          A mix of photography, astrophotography, and visual experiments.
-        </p>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <picture class="hero-image">
+        <source srcset="images/recombined-optimized.webp" type="image/webp">
+        <img src="images/recombined-optimized.jpg" width="1800" height="1201" alt="The luminous core of the Milky Way, photographed by Brian Feuerman" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Engineering & photography</p>
+        <h1 id="hero-heading">Brian<br>Feuerman.</h1>
+        <p class="hero-description">Aerospace Engineering student<br>and photographer.</p>
+        <a class="hero-link" href="#portfolio">View photographs <span aria-hidden="true">↓</span></a>
       </div>
-
+      <div class="hero-bottom mono">
+        <span>Photography by Brian Feuerman</span>
+      </div>
+      <span class="frame-corner corner-tl" aria-hidden="true"></span>
+      <span class="frame-corner corner-tr" aria-hidden="true"></span>
+      <span class="frame-corner corner-bl" aria-hidden="true"></span>
+      <span class="frame-corner corner-br" aria-hidden="true"></span>
+    </section>
+    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow section-label">Selected work</p>
+          <h2 id="portfolio-heading">Photographs.</h2>
+        </div>
+        <p class="section-intro">A selection of my photographs.</p>
+      </div>
+      <p class="gallery-hint mono" hidden>Click a photograph to explore <span aria-hidden="true">↗</span></p>
       <div class="gallery">
-        <figure class="gallery-card large">
-          <picture>
-            <source srcset="images/recombined-optimized.webp" type="image/webp">
-            <img src="images/recombined-optimized.jpg" width="1800" height="1201" alt="Photography work by Brian Feuerman" loading="lazy" decoding="async">
-          </picture>
+        <figure class="gallery-item">
+          <a class="photo-link" href="images/recombined-optimized.jpg" data-photo data-type="Astrophotography">
+            <picture>
+              <source srcset="images/recombined-optimized.webp" type="image/webp">
+              <img src="images/recombined-optimized.jpg" width="1800" height="1201" alt="Dense stars and golden dust clouds in the core of the Milky Way" loading="lazy" decoding="async">
+            </picture>
+            <span class="photo-open" aria-hidden="true">↗</span>
+          </a>
+          <figcaption class="photo-type mono">Astrophotography</figcaption>
         </figure>
-
-        <figure class="gallery-card sunspot-card">
-          <picture>
-            <source srcset="images/sunspot-optimized.webp" type="image/webp">
-            <img src="images/sunspot-optimized.jpg" width="1100" height="665" alt="Solar sunspot photograph" loading="lazy" decoding="async">
-          </picture>
+        <figure class="gallery-item">
+          <a class="photo-link" href="images/sunspot-optimized.jpg" data-photo data-type="Solar photography">
+            <picture>
+              <source srcset="images/sunspot-optimized.webp" type="image/webp">
+              <img src="images/sunspot-optimized.jpg" width="1100" height="665" alt="Dark sunspots scattered across the textured golden surface of the Sun" loading="lazy" decoding="async">
+            </picture>
+            <span class="photo-open" aria-hidden="true">↗</span>
+          </a>
+          <figcaption class="photo-type mono">Solar photography</figcaption>
         </figure>
-
-        <figure class="gallery-card trail-card">
-          <picture>
-            <source srcset="images/trail-optimized.webp" type="image/webp">
-            <img src="images/trail-optimized.jpg" width="1400" height="934" alt="Long exposure star trail photograph" loading="lazy" decoding="async">
-          </picture>
+        <figure class="gallery-item">
+          <a class="photo-link" href="images/trail-optimized.jpg" data-photo data-type="Long exposure">
+            <picture>
+              <source srcset="images/trail-optimized.webp" type="image/webp">
+              <img src="images/trail-optimized.jpg" width="1400" height="934" alt="Circular star trails sweeping above a forest during a long exposure" loading="lazy" decoding="async">
+            </picture>
+            <span class="photo-open" aria-hidden="true">↗</span>
+          </a>
+          <figcaption class="photo-type mono">Long exposure</figcaption>
         </figure>
-
-        <figure class="gallery-card city-card">
-          <picture>
-            <source srcset="images/city-optimized.webp" type="image/webp">
-            <img src="images/city-optimized.jpg" width="1400" height="934" alt="City photography" loading="lazy" decoding="async">
-          </picture>
+        <figure class="gallery-item">
+          <a class="photo-link" href="images/city-optimized.jpg" data-photo data-type="Night photography">
+            <picture>
+              <source srcset="images/city-optimized.webp" type="image/webp">
+              <img src="images/city-optimized.jpg" width="1400" height="934" alt="City lights stretching toward the horizon beyond dark rolling hills" loading="lazy" decoding="async">
+            </picture>
+            <span class="photo-open" aria-hidden="true">↗</span>
+          </a>
+          <figcaption class="photo-type mono">Night photography</figcaption>
         </figure>
-
-        <figure class="gallery-card wide orion-card">
-          <picture>
-            <source srcset="images/orion-optimized.webp" type="image/webp">
-            <img src="images/orion-optimized.jpg" width="1600" height="1146" alt="Astrophotography image of Orion" loading="lazy" decoding="async">
-          </picture>
+        <figure class="gallery-item">
+          <a class="photo-link" href="images/orion-optimized.jpg" data-photo data-type="Astrophotography">
+            <picture>
+              <source srcset="images/orion-optimized.webp" type="image/webp">
+              <img src="images/orion-optimized.jpg" width="1600" height="1146" alt="The Orion constellation with blue and violet nebulae against a field of stars" loading="lazy" decoding="async">
+            </picture>
+            <span class="photo-open" aria-hidden="true">↗</span>
+          </a>
+          <figcaption class="photo-type mono">Astrophotography</figcaption>
         </figure>
       </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-      <div class="about-card">
-        <div class="about-image-wrap">
-          <picture>
-            <source srcset="images/profile-optimized.webp" type="image/webp">
-            <img src="images/profile-optimized.jpg" width="800" height="800" alt="Brian Feuerman" class="about-image" loading="lazy" decoding="async">
-          </picture>
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <div class="about-layout wrap">
+        <div class="portrait-column">
+          <figure class="portrait">
+            <picture>
+              <source srcset="images/profile-optimized.webp" type="image/webp">
+              <img src="images/profile-optimized.jpg" width="800" height="800" alt="Brian Feuerman, smiling outdoors" loading="lazy" decoding="async">
+            </picture>
+            <figcaption class="mono">The person behind the camera. <span aria-hidden="true">↖</span></figcaption>
+          </figure>
+          <p class="portrait-note">Hi, I’m Brian.</p>
         </div>
-
-        <div class="about-text">
-          <p class="section-kicker">About Me</p>
-          <h2>Hi, I’m Brian.</h2>
-          <p>
-            I'm an Aerospace Engineering student, passionate photographer, and
-            all-around fun guy. In my spare time, you can find me editing photos,
-            working on neat engineering projects, or admiring the night sky.
-          </p>
+        <div class="about-copy">
+          <p class="eyebrow section-label">A little about me</p>
+          <h2 id="about-heading">About me.</h2>
+          <p>I’m an Aerospace Engineering student with an interest in photography, engineering projects, and the night sky.</p>
+          <p>In my spare time, you’ll find me editing photos, working on projects, or outside admiring the stars.</p>
+          <a id="resume" class="resume-link" href="Brian_s_Resume.pdf" target="_blank" rel="noopener">
+            <span><span class="mono resume-label">Experience, projects & skills</span><span class="resume-title">View résumé</span></span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+            <span class="sr-only"> (PDF, opens in a new tab)</span>
+          </a>
         </div>
       </div>
     </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="section resume-section">
-      <div class="simple-card">
-        <p class="section-kicker">Resume</p>
-        <h2>Want the details?</h2>
-        <p>
-          Take a look at my resume for projects, experience, and technical skills.
-        </p>
-        <a href="/Brian_s_Resume.pdf" target="_blank" class="button primary">
-          View Resume
-        </a>
+    <section id="contact" class="contact wrap" aria-labelledby="contact-heading">
+      <div class="contact-top">
+        <p class="eyebrow section-label">Contact</p>
+      </div>
+      <h2 id="contact-heading">Get in <a href="mailto:brian@brianfeuerman.com">touch.<span class="hello-arrow" aria-hidden="true">↗</span></a></h2>
+      <div class="contact-bottom">
+        <a class="email-link" href="mailto:brian@brianfeuerman.com">brian@brianfeuerman.com <span aria-hidden="true">↗</span></a>
+        <div class="social-links">
+          <a href="https://instagram.com/brianscoolstuff" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="https://www.linkedin.com/in/brianfeuerman/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
       </div>
     </section>
-
-    <!-- Donate Section -->
-    <section id="donate" class="section donate-section">
-      <div class="simple-card donate-card">
-        <p class="section-kicker">Support</p>
-        <h2>Support My Work</h2>
-        <p>
-          If you enjoy my photography or projects, consider supporting me.
-        </p>
-        <a
-          href="https://www.paypal.com/donate/?business=6NGY5P9HKCDYA&no_recurring=0&currency_code=USD"
-          class="button primary"
-          target="_blank"
-          rel="noopener"
-        >
-          Donate via PayPal
-        </a>
-      </div>
-    </section>
+    <aside id="donate" class="support wrap" aria-label="Support my work">
+      <p>If you’d like to support my photography:</p>
+      <a href="https://www.paypal.com/donate/?business=6NGY5P9HKCDYA&no_recurring=0&currency_code=USD" target="_blank" rel="noopener">Support my work <span aria-hidden="true">↗</span><span class="sr-only"> via PayPal (opens in a new tab)</span></a>
+    </aside>
   </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Brian Feuerman</p>
-
-    <div class="social-links">
-      <a href="mailto:brian@brianfeuerman.com" aria-label="Email">
-        <img src="images/email.png" alt="">
-      </a>
-
-      <a href="https://instagram.com/brianscoolstuff" target="_blank" rel="noopener" aria-label="Instagram">
-        <img src="images/instagram.png" alt="">
-      </a>
-
-      <a href="https://www.linkedin.com/in/brianfeuerman/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="images/linkedin.png" alt="">
-      </a>
-    </div>
+  <footer class="site-footer wrap mono">
+    <p>© Brian Feuerman</p>
+    <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
   </footer>
+  <dialog class="lightbox" aria-labelledby="lightbox-title" aria-describedby="lightbox-description">
+    <div class="lightbox-shell">
+      <div class="lightbox-top mono"><span>Photography / Brian Feuerman</span><button class="lightbox-close" type="button" aria-label="Close photograph" autofocus>Close <span aria-hidden="true">×</span></button></div>
+      <div class="lightbox-stage"><img class="lightbox-image" alt="" width="1800" height="1201"></div>
+      <div class="lightbox-bottom">
+        <div><h2 id="lightbox-title" class="sr-only">Photograph viewer</h2><p id="lightbox-description" aria-live="polite"></p></div>
+        <div class="lightbox-controls"><button type="button" class="lightbox-prev" aria-label="Previous photograph">←</button><button type="button" class="lightbox-next" aria-label="Next photograph">→</button></div>
+      </div>
+      <p class="lightbox-help mono">Use ← → to explore · Esc to close</p>
+    </div>
+  </dialog>
 </body>
 </html>
