@@ -85,6 +85,12 @@ h2 { font: 400 clamp(48px, 5.7vw, 82px)/.98 var(--serif); letter-spacing: -.025e
 .about-copy h2 { font-size: clamp(46px,4.8vw,68px); margin-bottom: 28px; }
 .about-copy > p:not(.eyebrow) { font-size: 14px; line-height: 1.9; max-width: 480px; margin-top: 14px; }
 .about-copy > p + p:not(.eyebrow) { color: var(--ink); }
+.planetary-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; padding: 16px 18px; border: 1px solid var(--ink); }
+.planetary-link > span:first-child { min-width: 0; }
+.planetary-label { display: block; font-size: 8px; text-transform: uppercase; }
+.planetary-title { display: block; margin-top: 6px; font-size: 14px; line-height: 1.5; }
+.planetary-arrow { flex-shrink: 0; font-size: 24px; }
+.planetary-link:hover .planetary-title { text-decoration: underline; text-underline-offset: 4px; }
 .resume-link { border-top: 1px solid #b9beaa; border-bottom: 1px solid #b9beaa; padding-block: 20px; margin-top: 30px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
 .resume-label { text-transform: uppercase; color: var(--ink); font-size: 8px; display: block; }
 .resume-title { display: block; font: 400 28px/1.2 var(--serif); margin-top: 6px; }
